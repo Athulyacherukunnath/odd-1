@@ -103,7 +103,7 @@ size_t free_mem()
 			break;
 		}
 	}
-	fclose(f);
+	fclose(f); //function call
 	if (!found)
 		return 1024*1024;
 	n = strtoul(buf + 9, NULL, 10);
@@ -120,7 +120,7 @@ size_t free_mem()
 }
 
 
-int prepare_copy(struct dd_config *ddc, int *ifd, int *ofd)
+int prepare_copy(struct dd_config *ddc, int *ifd, int *ofd) // function definition
 {
 	struct stat st;
 	int fli = O_RDONLY|O_LARGEFILE|O_NOCTTY, flo = O_WRONLY|O_LARGEFILE|O_NOATIME|O_NOCTTY;
